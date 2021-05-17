@@ -17,14 +17,26 @@
 
 //1
 
-let array = [1, 'hello', null, true, 123n, undefined, Symbol('Water'), {name: 'Bill'}];
+let array = [null, undefined];
 
 
 let questionOne = +prompt('Сколько тебе лет?');
-array.push({age: (String(questionOne))});
+array.push(Number(questionOne));
 
 let questionTwo = prompt('Как тебя зовут?');
-array.push({name: (String(questionTwo))});
+array.push(String(questionTwo));
+
+let questionThree = confirm('Ты еще на сайте?');
+array.push(Boolean(questionThree));
+
+let questionFour = prompt('Используешь id или class?');
+array.push(Symbol(questionFour));
+
+let questionFive = prompt('123n');
+array.push(BigInt(questionFive));
+
+let questionSix = prompt('Как зовут домашнего питомца?');
+array.push(Object({name:(questionSix)}));
 
 console.log(array);
 
